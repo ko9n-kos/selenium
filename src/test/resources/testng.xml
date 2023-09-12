@@ -8,7 +8,7 @@
         <parameter name="diagonalMax" value='50"'/>
         <parameter name="diagonalResolution" value="1920x1080 (Full HD)"/>
         <classes>
-            <class name="course.selenium.OnlinerTest"/>
+            <class name="onliner.test.OnlinerTest"/>
         </classes>
     </test>
 </suite>
