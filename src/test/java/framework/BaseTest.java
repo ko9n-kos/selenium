@@ -15,15 +15,17 @@ import java.util.concurrent.TimeUnit;
 
 import static framework.PropertyReader.getProperties;
 
-public class BaseTest  {
+public class BaseTest {
 
     protected static WebDriver driver = new ChromeDriver();
     protected static JavascriptExecutor js = (JavascriptExecutor) driver;
     protected static SoftAssert softAssert = new SoftAssert();
     protected static WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    public static void getDriver(){
+
+    public static void getDriver() {
         WebDriverManager.chromedriver().setup();
     }
+
     @BeforeTest
     public void setUp() throws IOException {
         getDriver();
@@ -31,6 +33,7 @@ public class BaseTest  {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(getProperties("siteUrl"));
     }
+
     @AfterTest
     public void finish() {
         driver.quit();
