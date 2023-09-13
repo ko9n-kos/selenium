@@ -4,16 +4,20 @@ import onliner.pageObject.*;
 import org.testng.annotations.*;
 
 public class OnlinerTest extends BaseTest {
+
     @Parameters({"brand", "priceMax","diagonalMin", "diagonalMax", "diagonalResolution"})
     @Test
     public void onlinerProductsSearchTest(String brand, String priceMax, String diagonalMin, String diagonalMax, String diagonalResolution)
     {
+        MainPage mainPage = new MainPage(driver);
         mainPage.isMainPage();
         mainPage.selectMainNavigationOption("Каталог");
+        CatalogPage catalogPage = new CatalogPage(driver);
         catalogPage.isCatalogPage();
         catalogPage.selectCatalogListOption("Электроника");
         catalogPage.selectElectronicOption("Телевидение");
         catalogPage.selectTvAndVideoOption("Телевизоры");
+        TvPage tvPage = new TvPage(driver);
         tvPage.isTvPage();
         tvPage.selectManufacturer(brand);
         tvPage.setMaxPrice(priceMax);

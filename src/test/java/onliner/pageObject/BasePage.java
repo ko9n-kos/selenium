@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-public class BasePage extends Utils{
+public class BasePage extends BaseTest{
     protected WebDriver driver;
 
     public BasePage(WebDriver driver){
