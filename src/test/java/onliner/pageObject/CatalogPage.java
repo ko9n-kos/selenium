@@ -1,5 +1,6 @@
 package onliner.pageObject;
 
+import framework.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

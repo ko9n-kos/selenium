@@ -1,4 +1,4 @@
-package onliner.pageObject;
+package framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-public class BasePage extends BaseTest{
+public class BasePage extends BaseTest {
     protected WebDriver driver;
 
     public BasePage(WebDriver driver){

@@ -1,5 +1,6 @@
 package onliner.test;
 
+import framework.BaseTest;
 import onliner.pageObject.*;
 import org.testng.annotations.*;
 

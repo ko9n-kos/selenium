@@ -1,4 +1,4 @@
-package onliner.pageObject;
+package framework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,7 +13,9 @@ import java.io.*;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest extends PropertyReader {
+import static framework.PropertyReader.getProperties;
+
+public class BaseTest  {
 
     protected static WebDriver driver = new ChromeDriver();
     protected static JavascriptExecutor js = (JavascriptExecutor) driver;

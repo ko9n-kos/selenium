@@ -1,4 +1,4 @@
-package onliner.pageObject;
+package framework;
 
 import java.io.IOException;
 
