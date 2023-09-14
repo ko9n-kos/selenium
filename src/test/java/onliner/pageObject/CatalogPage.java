@@ -19,8 +19,15 @@ public class CatalogPage extends BasePage {
         selectOption(driver.findElement(By.xpath(String.format(catalogNavigationList, option))));
     }
 
+    public String nbspReplacement(String option) {
+        if (option.contains("и ")) {
+            return option.replace("и ", "и ");
+        }
+        return option;
+    }
+
     public void selectElectronicOption(String option) {
-        selectOption(driver.findElement(By.xpath(String.format(electronicAsideList, option.replace("и ", "и ")))));
+        selectOption(driver.findElement(By.xpath(String.format(electronicAsideList, nbspReplacement(option)))));
     }
 
     public void selectTvAndVideoOption(String option) {
