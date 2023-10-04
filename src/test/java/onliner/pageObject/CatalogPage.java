@@ -1,14 +1,15 @@
 package onliner.pageObject;
 
 import framework.BasePage;
+import framework.elements.Label;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CatalogPage extends BasePage {
 
-    private final String catalogNavigationList = "//li[@data-id='12']/following-sibling::li//child::span[contains(text(), '%s')]";
-    private final String electronicAsideList = "//div[@data-id='1']//child::div[contains(text(), '%s')]";
-    private final String tvAndVideoAsideList = "//div[@data-id='1']//child::div//child::span[contains(text(), '%s')]";
+    private static final String lblCatalogNavigationList = "//li[@data-id='12']/following-sibling::li//child::span[contains(text(), '%s')]";
+    private static final String lblElectronicAsideList = "//div[@data-id='1']//child::div[contains(text(), '%s')]";
+    private static final String lblTvAndVideoAsideList = "//div[@data-id='1']//child::div//child::span[contains(text(), '%s')]";
     public static final By pageLocator = By.xpath("//div[@class='catalog-navigation__title' and contains(text(), 'Каталог')]");
 
     public CatalogPage(WebDriver driver) {
@@ -16,7 +17,8 @@ public class CatalogPage extends BasePage {
     }
 
     public void selectCatalogListOption(String option) {
-        selectOption(driver.findElement(By.xpath(String.format(catalogNavigationList, option))));
+        Label catalogNavigationList = new Label(By.xpath(String.format(lblCatalogNavigationList, option)));
+        catalogNavigationList.click();
     }
 
     public String nbspReplacement(String option) {
@@ -27,10 +29,12 @@ public class CatalogPage extends BasePage {
     }
 
     public void selectElectronicOption(String option) {
-        selectOption(driver.findElement(By.xpath(String.format(electronicAsideList, nbspReplacement(option)))));
+        Label electronicAsideList = new Label(By.xpath(String.format(lblElectronicAsideList, nbspReplacement(option))));
+        electronicAsideList.click();
     }
 
     public void selectTvAndVideoOption(String option) {
-        selectOption(driver.findElement(By.xpath(String.format(tvAndVideoAsideList, option))));
+        Label tvAndVideoAsideList = new Label(By.xpath(String.format(lblTvAndVideoAsideList, option)));
+        tvAndVideoAsideList.click();
     }
 }
